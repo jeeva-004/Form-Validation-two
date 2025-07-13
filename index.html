@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/style.css">
+
+  <script src="./src/script.js" defer></script>
+
+  <title>Contact form</title>
+
+</head>
+
+<body>
+  <div class="form-box">
+    <h2>Contact Us</h2>
+    <form action="#">
+      <div class="name-group group">
+        <div class="first">
+          <label for="first-name">First Name <sup>*</sup></label>
+          <input type="text" id="first-name">
+          <div class="error"></div>
+        </div>
+        <div class="last">
+          <label for="last-name">Last Name<sup>*</sup></label>
+          <input type="text" id="last-name">
+          <div class="error"></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <label for="e-mail">Email Address<sup>*</sup></label>
+        <input type="email" id="e-mail">
+        <div class="error"></div>
+      </div>
+      <!-- This field is required -->
+      <label for="check">Query Type<sup>*</sup></label>
+      <div class="radio-group group">
+        <div class="radio-one">
+          <input type="radio" name="type" id="type-1"><label for="type-1">General Enquiry</label>
+        </div>
+        <div class="radio-two">
+          <input type="radio" name="type" id="type-2">
+          <label for="type-2">Support Request</label>
+          <div class="error"></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <label for="message">Message<sup>*</sup></label>
+        <textarea name="message" id="message"></textarea>
+        <div class="error">This field is required</div>
+      </div>
+
+      <div class="group">
+        <input type="checkbox">
+        <p>I consent to being contacted by the team</p>
+        <div class="error"></div>
+        <!-- To submit this form, please consent to being contacted -->
+
+      </div>
+
+      <div class="group">
+        <input type="submit">
+      </div>
+    </form>
+    <div class="message-sent">
+      <div class="sented"><img src="./assets/images/icon-success-check.svg" alt="sented">
+        <h4> Message Sent!</h4>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>

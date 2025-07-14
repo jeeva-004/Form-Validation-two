@@ -8,8 +8,10 @@ const last_Name = form_.querySelector('#last-name');
 const email_Id = form_.querySelector('#e-mail');
 const check_One = form_.querySelector('#type-1');
 const check_Two = form_.querySelector('#type-2');
+const radio_Group = form_.querySelector('.radio-group');
 const message = form_.querySelector('#message');
 const check_box = form_.querySelector('#check-box');
+const query_Msg = form_.querySelector('.query-type-msg');
 
 
 form_.addEventListener('submit', (e) => {
@@ -56,25 +58,21 @@ function validate_Form() {
     result = true;
   }
 
-  if (!check_One.checked) {
-    setError(check_One, 'Please select a query type!');
+  if (!check_One.checked && !check_Two.checked) {
+    radio_Box_error(radio_Group,`Select a type!`)
     result = false;
   }
-  else if (!check_Two.checked) {
-    setError(check_Two, 'Please select a query type!');
-    result = false;
-  }
-  else if (check_One.checked) {
-    setSuccess(check_One);
-    result = true;
-  }
-  else {
-    setSuccess(check_Two);
+  else if(check_One.checked) {
+    radio_Box_success(check_One, check_Two)
     result = true;
   }
 
+  else{
+    radio_Box_success(check_Two, check_One)
+    result = true;
+  }
 
-  if (message_val.trim()==='') {
+  if (message_val.trim() === '') {
     setError(message, `Can't be empty. Type some subject!`);
     result = false;
   }
@@ -83,11 +81,11 @@ function validate_Form() {
     result = true;
   }
 
-  if(!check_box.checked){
+  if (!check_box.checked) {
     setError(check_box, `To submit this form, Please consent to being contacted!`);
     result = false;
   }
-  else{
+  else {
     setSuccess(check_box);
     result = true;
   }
@@ -138,4 +136,15 @@ function setSuccess_Name(element) {
   }
   element.classList.remove('error');
   element.classList.add('success');
+}
+
+function radio_Box_error(element,msg){
+  let error_el = element.querySelector('.error-message');
+  error_el.textContent = msg;
+}
+
+function radio_Box_success(element, element_two){
+  let radio = element.closest('.radio'); 
+  radio.classList.add('success-bg');
+  element_two.classList.remove('success-bg');
 }

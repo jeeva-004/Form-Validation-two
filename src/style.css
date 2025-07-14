@@ -41,13 +41,8 @@ label {
     margin-bottom: 10px;
 }
 
-.success {
-    border: 1px solid hsl(169, 82%, 27%);
-}
-
-.error {
-    display: none;
-    border: 1px solid hsl(0, 66%, 54%);
+input{
+    cursor: pointer;
 }
 
 sup {
@@ -180,7 +175,7 @@ p {
 
 .message-sent {
     width: 60%;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 10px;
     position: absolute;
@@ -208,6 +203,24 @@ p {
     width: 15px;
 }
 
+/* error  */
+.success {
+    border: 1px solid hsl(169, 82%, 27%)!important;
+}
+
+.error{
+    border: 1px solid hsl(0, 66%, 54%)!important;
+}
+
+.success-bg{
+    background-color: hsla(169, 82%, 27%,.2)!important;
+}
+
+.error-message {
+    color: hsl(0, 66%, 54%);
+    font-size: .89rem;
+    margin: 8px 0;
+}
 
 @media screen and (max-width:768px) {
     .form-box {
